@@ -20,6 +20,11 @@ public class Empresa {
         
         Scanner entrada = new Scanner(System.int);
         int opcion;
+        int contador;
+        
+        int edad=50;
+        Empleado[] empleados=new Empleado.[5];
+        
         do{
             System.out.println("Bienvenidos");
             System.out.println("******************");
@@ -31,6 +36,39 @@ public class Empresa {
             
             System.out.println("Digite una opcion: ");
             opcion=entrada.nextInt();
+            
+            switch(opcion){
+                case 1:
+                    empleados[contador]=new Empleados();
+                    
+                    System.out.println("Digita el id: ");
+                    empleados[contador].setId(entrada.nextInt());
+                    System.out.println("Digita el nombre");
+                    empleados[contador].setNombre(entrada.next());
+                    System.out.println("Digite el cargo");
+                    empleados[contador].setCargo(entrada.next());
+                    System.out.println("Digite el salario");
+                    empleados[contador].setSalario(entrada.nextInt());                    
+                    System.out.println("Digite el telefono");
+                    empleados[contador].setTelefono(entrada.next());
+                    System.out.println("Digite la direccion");
+                    empleados[contador].setDireccion(entrada.next());
+                    contador++
+                    break;
+                case 2:
+                    break; 
+                case 3:
+                    for (int i=0; i<contador; i++){
+                        System.out.println(empleados[i].getNombre());
+                    }
+                    break;
+                case 4:
+                    System.out.println("Gracias");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+            }
             
         }while(opcion!=4);
     }
